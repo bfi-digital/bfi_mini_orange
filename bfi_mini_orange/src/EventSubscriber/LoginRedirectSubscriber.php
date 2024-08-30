@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Drupal\bfi_mini_orange\EventSubscriber;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
