@@ -26,7 +26,7 @@ class LoginRedirectSubscriber implements EventSubscriberInterface {
    */
   static function getSubscribedEvents(): array {
     // The number 30 is the priority.
-    // This is set at 30 so that it runs before page caching (currently priority 27)
+    // This is set at 30 so that it runs before page caching (currently priority 27).
     $events[KernelEvents::REQUEST][] = ['onRequest', 30];
 
     return $events;
