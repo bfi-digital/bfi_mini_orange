@@ -52,7 +52,7 @@ final class SettingsForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state): void {
     $this->config('bfi_mini_orange.settings')
-      ->set('example', $form_state->getValue('enable_redirect_user_login'))
+      ->set('enable_redirect_user_login', $form_state->getValue('enable_redirect_user_login'))
       ->save();
     parent::submitForm($form, $form_state);
   }
