@@ -5,3 +5,4 @@ package: BFI
 core_version_requirement: ^10 || ^11
 dependencies:
   - miniorange_oauth_client
+configure: bfi_mini_orange.settings
