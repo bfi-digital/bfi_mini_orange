@@ -8,7 +8,7 @@ use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Configure BFI SSO settings for this site.
+ * Configure settings for this site.
  */
 final class SettingsForm extends ConfigFormBase {
 
