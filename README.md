@@ -2,6 +2,8 @@
 
 This repository contains a module for settings relating to the Drupal contributed module [Mini Orange OAuth & OpenID Connect Login](https://www.drupal.org/project/miniorange_oauth_client). The module currently provides a setting to redirect the Drupal */user/login* path to the SSO login.
 
+## Module installation with composer
+
 ## Module configuration
 When the module is installed the default setting to redirect is disabled. The redirect can be enabled by going to the following settings path *admin/config/system/settings* or following the menu links *Configuration > System > BFI Mini Orange Settings*.
 
@@ -15,8 +17,6 @@ bfi_mini_orange.settings
 ```php
 $config['bfi_mini_orange.settings']['enable_redirect_user_login'] = TRUE;
 ```
-
-## Module installation with composer
 
 ## Mini Orange configuration
 
