@@ -1,7 +1,0 @@
-services:
-  login_redirect_events_subscriber:
-    class: '\Drupal\bfi_mini_orange\EventSubscriber\LoginRedirectSubscriber'
-    arguments:
-      ['@current_route_match', '@config.factory']
-    tags:
-      - { name: 'event_subscriber' }

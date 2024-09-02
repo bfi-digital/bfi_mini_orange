@@ -1,8 +1,0 @@
-name: 'BFI Mini Orange'
-type: module
-description: 'Module relating to the Mini Orange OAuth & OpenID Connect Login contributed module.'
-package: BFI
-core_version_requirement: ^10 || ^11
-dependencies:
-  - miniorange_oauth_client
-configure: bfi_mini_orange.settings
