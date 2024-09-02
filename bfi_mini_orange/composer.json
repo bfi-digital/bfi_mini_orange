@@ -1,6 +1,0 @@
-{
-    "name": "drupal/bfi-mini-orange",
-    "type": "drupal-module",
-    "description": "Provides functionality for SSO.",
-    "license": "GPL-2.0-or-later"
-}
