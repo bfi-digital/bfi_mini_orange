@@ -14,7 +14,7 @@ To add the module to your Drupal project run the following commands from the roo
 composer config repositories.bfi git git@github.com:bfi-digital/bfi_mini_orange.git
 ```
 ```shell
-composer require bfi-digital/bfi_mini_orange:dev-main#^v1.0.2
+composer require bfi-digital/bfi_mini_orange:dev-main#^v1.0.3
 ```
 
 ## Module configuration
