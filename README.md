@@ -34,7 +34,7 @@ The mini orange setup is based on these [instructions](https://plugins.miniorang
 For each environment IT must be provided with the following:
 
 * An application name (e.g. staging-env, production-env)
-* The callback url that ends with */moLogin* - e.g. https://example.com/moLogin)
+* The callback url that ends with */mo_login* - e.g. https://example.com/mo_login)
 
 IT will furnish you with:
 
