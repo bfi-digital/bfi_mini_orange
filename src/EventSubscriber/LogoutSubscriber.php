@@ -50,9 +50,7 @@ class LogoutSubscriber implements EventSubscriberInterface {
           user_logout();
         }
 
-        $response = new TrustedRedirectResponse(
-          'https://login.microsoftonline.com/6c9453b6-484a-4aa2-ad7e-94a25d4692e5/oauth2/logout'
-        );
+        $response = new TrustedRedirectResponse($logoutUrl);
 
         $response->send(); 
       }
