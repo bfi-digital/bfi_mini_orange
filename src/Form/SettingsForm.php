@@ -42,9 +42,9 @@ final class SettingsForm extends ConfigFormBase {
       '#title' => $this->t('Logout URL'),
       '#default_value' => $this->config('bfi_mini_orange.settings')->get('logout_url'),
       '#description' => $this->t('URL to logout from the IdP.'),
-      '#attributes' => array(
+      '#attributes' => [
         'placeholder' => $this->t('E.g. https://login.microsoftonline.com/[tenant_id]/oauth2/logout'),
-      ),
+      ],
     ];
 
     return parent::buildForm($form, $form_state);
