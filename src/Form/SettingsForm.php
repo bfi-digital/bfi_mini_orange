@@ -34,7 +34,17 @@ final class SettingsForm extends ConfigFormBase {
       '#type' => 'checkbox',
       '#title' => $this->t('Enable user login redirect'),
       '#default_value' => $this->config('bfi_mini_orange.settings')->get('enable_redirect_user_login'),
-      '#description' => $this->t('Enables the redirect from the user login path to SSO.'),
+      '#description' => $this->t('Enables login to redirect to the IdP.'),
+    ];
+
+    $form['logout_url'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Logout URL'),
+      '#default_value' => $this->config('bfi_mini_orange.settings')->get('logout_url'),
+      '#description' => $this->t('URL to logout from the IdP.'),
+      '#attributes' => array(
+        'placeholder' => $this->t('E.g. https://login.microsoftonline.com/[tenant_id]/oauth2/logout'),
+      ),
     ];
 
     return parent::buildForm($form, $form_state);

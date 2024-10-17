@@ -7,15 +7,14 @@ namespace Drupal\bfi_mini_orange\EventSubscriber;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Routing\TrustedRedirectResponse;
-use Drupal\Core\Url;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 
 /**
- * Class LoginRedirectSubscriber.
+ * Class LogoutSubscriber.
  */
-class LoginRedirectSubscriber implements EventSubscriberInterface {
+class LogoutSubscriber implements EventSubscriberInterface {
   public function __construct(
     protected RouteMatchInterface $routeMatch,
     protected ConfigFactoryInterface $configFactory
@@ -37,16 +36,25 @@ class LoginRedirectSubscriber implements EventSubscriberInterface {
    * @param RequestEvent $event
    */
   public function onRequest(RequestEvent $event): void {
-    if ($this->routeMatch->getRouteName() === 'user.login') {
+    $routeName = $this->routeMatch->getRouteName();
+
+    if (in_array($routeName, ['user.logout', 'user.logout.confirm'])) {
       $config = $this->configFactory->get('bfi_mini_orange.settings');
       $enableRedirect = $config->get('enable_redirect_user_login') ?? FALSE;
+      $logoutUrl = $config->get('logout_url') ?? FALSE;
 
-      if ($enableRedirect) {
+      if ($enableRedirect && $logoutUrl) {
+        if ($routeName === 'user.logout.confirm') {
+          // If the user visits /user/logout the user is presented with a form to confirm the logout.
+          // In this scenario the user won't be presented with the form and so must initiate a Drupal logout.
+          user_logout();
+        }
+
         $response = new TrustedRedirectResponse(
-          Url::fromRoute('miniorange_oauth_client.moLogin')->toString()
+          'https://login.microsoftonline.com/6c9453b6-484a-4aa2-ad7e-94a25d4692e5/oauth2/logout'
         );
 
-        $response->send();
+        $response->send(); 
       }
     }
   }
