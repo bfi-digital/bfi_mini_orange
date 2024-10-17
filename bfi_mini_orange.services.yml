@@ -5,3 +5,10 @@ services:
       ['@current_route_match', '@config.factory']
     tags:
       - { name: 'event_subscriber' }
+  logout_events_subscriber:
+    class: '\Drupal\bfi_mini_orange\EventSubscriber\LogoutSubscriber'
+    arguments:
+      ['@current_route_match', '@config.factory']
+    tags:
+      - { name: 'event_subscriber' }
+
