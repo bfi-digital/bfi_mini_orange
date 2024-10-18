@@ -27,6 +27,10 @@ bfi_mini_orange.settings
 $config['bfi_mini_orange.settings']['enable_redirect_user_login'] = TRUE;
 ```
 
+### Logout URL
+
+From the module settings page, the logout URL must be set to sign the user out from the IdP.
+
 ## Mini Orange configuration
 
 The mini orange setup is based on these [instructions](https://plugins.miniorange.com/setup-guide-to-configure-azure-ad-with-drupal-oauth-client).
