@@ -14,7 +14,7 @@ composer require bfi-digital/bfi_mini_orange:dev-main#^v1.0.3
 ```
 
 ## Module configuration
-When the module is installed the default setting to redirect is disabled. The redirect can be enabled by going to the following settings path */admin/config/system/settings* or following the menu links *Configuration > System > BFI Mini Orange settings*.
+When the module is installed the default setting to redirect is disabled. The redirect can be enabled by going to the following settings path */admin/config/system/bfi-mini-orange-settings* or following the menu links *Configuration > System > BFI Mini Orange settings*.
 
 If local development redirect is disabled, then to avoid importing the disabled configuration on staging and production environments if redirect is enabled, then there are two possible solutions.
 
