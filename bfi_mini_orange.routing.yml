@@ -1,5 +1,5 @@
 bfi_mini_orange.settings:
-  path: '/admin/config/system/settings'
+  path: '/admin/config/system/bfi-mini-orange-settings'
   defaults:
     _title: 'BFI Mini Orange settings'
     _form: 'Drupal\bfi_mini_orange\Form\SettingsForm'
