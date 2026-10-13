@@ -42,8 +42,11 @@ class LoginRedirectSubscriber implements EventSubscriberInterface {
       $enableRedirect = $config->get('enable_redirect_user_login') ?? FALSE;
 
       if ($enableRedirect) {
+        $isMiniOrangeV5 = class_exists('\Drupal\miniorange_oauth_client\Controller\MoAuthorizationRequestController');
+        $url = $isMiniOrangeV5 ? Url::fromRoute('mo_oauth.authorization_request', ['mo_client_config'=>'idp']) : Url::fromRoute('miniorange_oauth_client.moLogin');
+
         $response = new TrustedRedirectResponse(
-          Url::fromRoute('miniorange_oauth_client.moLogin')->toString()
+          $url->toString()
         );
 
         $response->send();
